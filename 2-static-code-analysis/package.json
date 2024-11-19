@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "main": "ex1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:1": "node ex1.js",
+    "start:2": "node ex2.js",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0"
+  }
 }
