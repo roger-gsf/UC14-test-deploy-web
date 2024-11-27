@@ -1,0 +1,22 @@
+>> Learn what is and how to use:
+- mocha/chai
+- Jest
+
+// Jest is a library and a runtime to execute tests:
+
+>> How to install Jest:
+- npm install --save-dev jest
+
+>> Add Jest in package.json:
+  "scripts": {
+    "test": "jest"
+  },
+
+>> How to run the test with Jest:
+- npm run test || npm test
+
+// Conceito de Mocks:
+// Mocks são imitações ou unidades falsas que simulam o // comportamento de unidades reais. Por exemplo, temos a seguinte // função ´´´pagamento()´´´ que é responsavel por fazer conexão // com banco de dados , conexão essa que faz parte do processo de // pagamento. Essas funções estão dentro de uma classe maior que // tem relação com pagamentos.
+// Define que a função não vai ser chamada
+// Mock -> Alura
+// Simula o comportamento do código
