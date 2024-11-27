@@ -4,4 +4,4 @@ function isPalindrome(str) {
     return false;
 }
 
-module.exports = { isPalindrome };
+console.log(isPalindrome("Subi no onibus"));
