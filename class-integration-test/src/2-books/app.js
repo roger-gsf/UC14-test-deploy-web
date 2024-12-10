@@ -5,11 +5,11 @@ app.use(express.json());
 
 let books = [];
 
-// Helper functions
-const findBookById = (id) => books.find((book) => book.id === id);
-const findBookByTitle = (title) => books.find((book) => book.title === title);
+// Helper functions:
+// const findBookById = (id) => books.find((book) => book.id === id);
+// const findBookByTitle = (title) => books.find((book) => book.title === title);
 
-// Middleware to validate Content-Type
+
 app.use((req, res, next) => {
     if (req.headers['content-type'] !== 'application/json') {
         return res.status(400).json({ error: 'Content-Type must be application/json' });
@@ -17,7 +17,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Create a new book
+
 app.post('/books', (req, res) => {
     const { title, publisher } = req.body;
 
@@ -36,12 +36,12 @@ app.post('/books', (req, res) => {
     res.status(201).json(book);
 });
 
-// Retrieve all books
+
 app.get('/books', (req, res) => {
     res.json(books);
 });
 
-// Update a book by ID
+
 app.put('/books/:id', (req, res) => {
     const id = parseInt(req.params.id, 10);
     const { title, publisher } = req.body;
@@ -60,7 +60,7 @@ app.put('/books/:id', (req, res) => {
     res.status(200).json(books[bookIndex]);
 });
 
-// Delete a book by ID
+
 app.delete('/books/:id', (req, res) => {
     const id = parseInt(req.params.id, 10);
     const bookIndex = books.findIndex((book) => book.id === id);
@@ -73,7 +73,7 @@ app.delete('/books/:id', (req, res) => {
     res.status(200).json({ message: 'Book deleted successfully' });
 });
 
-// Loan a book by title
+
 app.post('/loans', (req, res) => {
     const { title } = req.body;
 
@@ -91,7 +91,7 @@ app.post('/loans', (req, res) => {
     res.status(200).json({ message: 'Book loaned successfully!', book: books[bookIndex] });
 });
 
-// Return a book by title
+
 app.post('/returns', (req, res) => {
     const { title } = req.body;
 
@@ -109,5 +109,5 @@ app.post('/returns', (req, res) => {
     res.status(200).json({ message: 'Book returned successfully!', book: books[bookIndex] });
 });
 
-// Testable features added
+
 module.exports = { app, books };

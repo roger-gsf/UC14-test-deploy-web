@@ -1,9 +1,9 @@
 const request = require('supertest');
-const { app, books } = require('../src/2-books/app'); // Adjust the path accordingly
+const { app, books } = require('../src/2-books/app');
 
 describe('Book Management API', () => {
     beforeEach(() => {
-        books.length = 0; // Clear books array before each test
+        books.length = 0;
     });
 
     it('should add a new book with valid data', async () => {
@@ -21,7 +21,7 @@ describe('Book Management API', () => {
     });
 
     it('should return an error when adding a book with invalid data', async () => {
-        const invalidBook = { publisher: 'Penguin Books' }; // Missing title
+        const invalidBook = { publisher: 'Penguin Books' };
 
         const response = await request(app)
             .post('/books')
